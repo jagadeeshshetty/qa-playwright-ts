@@ -4,13 +4,20 @@
   "description": "tbd",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test ./tests/e2e/pim/addEmployee.spec.ts --headed --trace on && npx playwright show-report"
+    "test": "npx playwright test ./tests/e2e/pim/addEmployee.spec.ts --headed --trace on",
+    "test-staging": "ENV=staging npx playwright test ./tests/e2e/pim/addEmployee.spec.ts --headed --trace on",
+    "test-dev": "ENV=dev npx playwright test ./tests/e2e/pim/addEmployee.spec.ts --headed --trace on",
+    "test-prod": "ENV=prod npx playwright test ./tests/e2e/pim/addEmployee.spec.ts --headed --trace on",
+    "test-debug": "npx playwright test ./tests/e2e/pim/addEmployee.spec.ts --headed --ui",
+    "test-report": "npx playwright test ./tests/e2e/pim/addEmployee.spec.ts --headed --trace on && npx playwright show-report",
+    "test-codegen": "npx playwright codegen"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.45.3",
-    "@types/node": "^20.14.12"
+    "@types/node": "^20.14.12",
+    "dotenv": "^16.4.5"
   }
 }
